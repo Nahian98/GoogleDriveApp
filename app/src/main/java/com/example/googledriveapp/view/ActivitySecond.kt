@@ -1,12 +1,12 @@
-package com.example.googledriveapp
+package com.example.googledriveapp.view
 
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.example.googledriveapp.utils.CONS_ADDRESS
+import com.example.googledriveapp.R
 
 class ActivitySecond : AppCompatActivity() {
     val TAG = "lifeCyActivity_Second"

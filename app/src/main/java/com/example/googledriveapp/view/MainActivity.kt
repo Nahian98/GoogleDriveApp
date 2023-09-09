@@ -1,4 +1,4 @@
-package com.example.googledriveapp
+package com.example.googledriveapp.view
 
 import android.R.id.message
 import android.content.Intent
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.googledriveapp.R
+import com.example.googledriveapp.model.adress
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.gson.GsonBuilder

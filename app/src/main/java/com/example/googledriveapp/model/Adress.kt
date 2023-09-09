@@ -1,4 +1,4 @@
-package com.example.googledriveapp
+package com.example.googledriveapp.model
 
 data class adress(
     var roadNo: Int?,
