@@ -20,12 +20,12 @@ class MainActivity : AppCompatActivity() {
     private val REQUEST_CODE_SIGN_IN = 100
 
     // val driveServiceHelper: DriveS
-    val TAG = "lifeCyActivity_"
-    var textViewShow: TextView ? = null
+    private val TAG = "lifeCyActivity_"
+    private var textViewShow: TextView ? = null
     private lateinit var buttonStart: Button
     private lateinit var buttonStop: Button
-    var address: String = ""
-    var data: adress? = null
+    private var address: String = ""
+    private var data: adress? = null
     var callBackClick: ((String) -> Unit)? = null
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
@@ -63,12 +63,23 @@ class MainActivity : AppCompatActivity() {
 //                putExtra(CONS_ADDRESS, "${GsonBuilder().create().toJson(data)}")
 //            })
 
-            val email = Intent(Intent.ACTION_SEND)
-            email.putExtra(Intent.EXTRA_EMAIL, "mrsaykatm4@gmail.com")
-            email.putExtra(Intent.EXTRA_SUBJECT, "Hi")
-            email.putExtra(Intent.EXTRA_TEXT, message)
+//            val email = Intent(Intent.ACTION_SEND)
+//            email.putExtra(Intent.EXTRA_EMAIL, "mrsaykatm4@gmail.com")
+//            email.putExtra(Intent.EXTRA_SUBJECT, "Hi")
+//            email.putExtra(Intent.EXTRA_TEXT, message)
+//
+//            startActivity(Intent.createChooser(email, "Choose an Email client:"))
 
-            startActivity(Intent.createChooser(email, "Choose an Email client:"))
+            val email = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                putExtra(Intent.EXTRA_EMAIL, "kanon@gmail.com")
+                putExtra(Intent.EXTRA_SUBJECT, "New Email")
+                putExtra(Intent.EXTRA_TEXT, "Hello!")
+            }
+
+            if (email.resolveActivity(packageManager) != null){
+                startActivity(email)
+            }
         }
 
         // Foreground service active button
@@ -112,7 +123,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, "MainActivity" + ": onResume $data")
+        Log.d(TAG, "MainActivity: onResume $data")
         data?.roadNo = 9
         Log.i(TAG, "$data")
     }
