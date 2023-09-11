@@ -5,8 +5,8 @@ import android.text.TextUtils
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.googledriveapp.utils.CONS_ADDRESS
 import com.example.googledriveapp.R
+import com.example.googledriveapp.utils.CONS_ADDRESS
 
 class ActivitySecond : AppCompatActivity() {
     val TAG = "lifeCyActivity_Second"
@@ -18,8 +18,6 @@ class ActivitySecond : AppCompatActivity() {
         Log.d(TAG, "onCreate")
         getExtra()
         initComponent()
-
-
     }
 
     private fun getExtra() {
@@ -27,11 +25,9 @@ class ActivitySecond : AppCompatActivity() {
     }
 
     private fun initComponent() {
-        if(!TextUtils.isEmpty(address)){
+        if (!TextUtils.isEmpty(address)) {
             findViewById<TextView>(R.id.tvShow).text = address
         }
-
-
     }
 
     override fun onStart() {
